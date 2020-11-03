@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<head>
+	<meta name="viewport" content="width=device-width" />
+</head>
+<body>
+
+<div style="padding: 20px; font-family: Arial, sans-serif; color: #646467; display: inline-block;">
+	<div class="left" style="display: inline-block; vertical-align: top;">
+		<span><img src="/images/{{employee.employee_profile_pic}}" style="width: 100%; max-width: 120px; max-height: 120px; margin-bottom: 20px; margin-right: 20px;"/></span>
+	</div>
+
+	<div class="right" style="display: inline-block; vertical-align: top;">
+		<table style="font-family: Arial, sans-serif; color: #646467; line-height: 17px;" cellspacing="0" cellpadding="0">
+			<tr>
+				<td class="name">
+					<h2 style="margin-bottom: 3px; margin-top: 0;">{{ employee.employee_first_name }}<span>&nbsp;</span>{{ employee.employee_last_name }}</h2>
+				</td>
+			</tr>
+			<tr>
+				<td class="spacer" height="5"></td>
+			</tr>
+			<tr>
+				<td class="title" style="font-size: 16px;">{{ employee.employee_title }}</td>
+			</tr>
+			<tr>
+				<td class="pronouns" style="font-size: 14px;"><span style="padding-top: 3px; display: block;">{% if employee.employee_pronoun_list == "a"%} They / Them{% endif %} {% if employee.employee_pronoun_list == "b"%} She / Her / Hers {% endif %} {% if employee.employee_pronoun_list == "c"%} He / Him / His{% endif %}</span></td>
+			</tr>
+			<tr>
+				<td class="spacer" height="10"></td>
+			</tr>
+			<tr>
+				<td class="phone" style="font-size: 14px;">({{ employee.employee_area_code }})<span>&nbsp;</span>{{employee.employee_phone_number}}</td>
+			</tr>
+			<tr>
+				<td class="address-one" style="font-size: 14px;">
+					<span>{{employee.employee_address1}}</span>
+				</td>
+			</tr>
+			<tr>
+				<td class="address-two" style="font-size: 14px;">
+					<span>{{employee.employee_address2}}</span>
+				</td>
+			</tr>
+			<tr>
+				<td class="spacer" height="10"></td>
+			</tr>
+			<tr>
+				<td class="zoom">
+					<span>
+						<img src="http://vetsource.com/images/signature/zoom-icon.jpg" alt="" width="20" style="vertical-align: middle;" />
+						<a style="color: #00A6DF; font-size: 14px; text-decoration: none;" href="https://vetsource.zoom.us/j/" + {{employee.employee_zoomid}}>Schedule a Meeting</a>
+					</span>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+	<div class="footer" style="width: 100%; border-top: 1px solid #ccc; padding-top: 10px; margin-top: 20px; display: flex; flex-wrap: wrap;">
+		<table style="flex-grow: 1; margin-bottom: 10px;">
+			<tr>
+				<td>
+					<a href="http://vetsource.com"><img src="http://vetsource.com/images/email/vetsource-gradient-smaller.jpg" width="130"/></a>
+				</td>
+			</tr>
+		</table>
+
+		<table cellpadding="0" cellspacing="0" style="margin-top: 1px;">
+			<tr>
+				<td class="facebook">
+					<a href="https://www.facebook.com/Vetsource/">
+						<img src="http://vetsource.com/images/signature/vetsource-facebook.jpg" alt="Facebook" width="16" />
+					</a>
+				</td>
+				<td class="spacer" width="15"></td>
+				<td class="instagram">
+					<a href="https://www.instagram.com/official_vetsource/">
+						<img src="http://vetsource.com/images/signature/vetsource-instagram.jpg" alt="Instagram" width="16" />
+					</a>
+				</td>
+				<td class="spacer" width="15"></td>
+				<td class="linkedin">
+					<a href="https://www.linkedin.com/company/vetsource">
+						<img src="http://vetsource.com/images/signature/vetsource-linkedin.jpg" alt="LinkedIn" width="16" />
+					</a>
+				</td>
+				<td class="spacer" width="15"></td>
+				<td class="twitter">
+					<a href="https://twitter.com/vetsource">
+						<img src="http://vetsource.com/images/signature/vetsource-twitter.jpg" alt="Twitter" width="16" />
+					</a>
+				</td>
+			</tr>
+		</table>
+
+	</div>
+</div>
+
+</body>
+</html>
+
+
+
