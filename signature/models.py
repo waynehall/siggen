@@ -38,9 +38,37 @@ class EmployeeInfo(models.Model):
         self.url = slugify(self.employee_first_name + self.employee_last_name + self.employee_title)
         super().save(*args, **kwargs)
         if self.employee_profile_pic:
+            
+            
+            
             img = Image.open(self.employee_profile_pic.path)
+            width, height = img.size 
+            if width > 120 and height > 120:
+            # keep ratio but shrink down
+                img.thumbnail((width, height))
 
-            if img.height > 120 or img.weight > 120:
-                output_size = (120, 120)
-                img.thumbnail(output_size)
+        # check which one is smaller
+            if height < width:
+                # make square by cutting off equal amounts left and right
+                left = (width - height) / 2
+                right = (width + height) / 2
+                top = 0
+                bottom = height
+                img = img.crop((left, top, right, bottom))
+
+            elif width < height:
+                # make square by cutting off bottom
+                left = 0
+                right = width
+                top = 0
+                bottom = width
+                img = img.crop((left, top, right, bottom))
+
+            if width > 120 and height > 120:
+                img.thumbnail((120, 120))
+
+
+                #if img.height > 120 or img.weight > 120:
+                #   output_size = (120, 120)
+                #  img.thumbnail(output_size)
                 img.save(self.employee_profile_pic.path)
