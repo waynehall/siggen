@@ -1,5 +1,123 @@
-<form action="{% url 'create' %}" method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button class="button" type="submit">Submit</button>
-</form>
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+</head>
+<div class="jumbotron">
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-10">
+            <img src="https://vetsource.com/wp-content/themes/vetsource-2/assets/images/logo.png"> 
+            <h5 class="card-title">Vetsource Signature Generator</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Please fill in as much information as you are comfortable with as these signatures will be available publicly.</h6>
+            <form action="{% url 'create' %}" method="post" enctype="multipart/form-data">
+                <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Name and Title</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">This section is required</h6>
+                <div class="form-row" style="margin-bottom:15px">
+                    <div class="form-group cardcol-md-6 mb-0" style=><label>First Name</label>
+                        {{ form.employee_first_name }}
+                    </div>
+                    <div class="form-group col-md-6 mb-0"> <Label> Last Name</Label>
+                        {{ form.employee_last_name }}
+                    </div>
+                    
+                </div>
+                <div class="form-row" style="margin-bottom:15px">
+                    <div class="form-group col-md-6 mb-0"> <Label> Title</Label>
+                        {{ form.employee_title  }}
+                    </div>
+
+                </div>
+                </div>  
+                </div>  
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Phone Number</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">This section is required. If you do not have a phone number, please enter the most appropriate customer service or location number</h6>
+                <div class="form-row" style="margin-bottom:15px">
+
+                    <div class="form-group col-md-6 mb-0"><Label>Area Code</Label>
+                        {{ form.employee_area_code }}
+                    </div>
+                    <div class="form-group col-md-6 mb-0"><label>Phone Number</label>
+                        {{ form.employee_phone_number }} <br>
+                        <small>Please enter as ###-#### example 738-4443</small>
+                    </div>
+                </div>
+                </div>  </div>  
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Pronouns</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">This section is *NOT* required</h6>
+                <div class="form-row" style="margin-bottom:15px">
+
+                    <div class="form-group col-md-6 mb-0"> <label>Pronouns</label>
+                        {{ form.employee_pronoun_list }}
+
+                    </div>
+                    <div class="form-group col-md-6 mb-0">
+                        {{ form.employee_pronoun_other }}
+                        <small class="form-text text-muted">Please specify if you selected "Other", otherwise leave blank.</small>
+                    </div>
+                </div>
+                </div>  </div>  
+
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Address</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">This section is *NOT* required</h6>
+                <div class="form-row" style="margin-bottom:15px">
+
+
+
+                    <div class="form-group col-md-6 mb-0"><label>Address List</label>
+                        {{ form.employee_address  }}
+                    </div>
+                    <div class="form-group col-md-6 mb-0"> 
+                    </div>
+                    <div class="form-group col-md-6 mb-0"style="margin-top: 15px"> <label>Address Other Line 1</label>
+                        {{ form.employee_address_other1  }}
+                        <small class="form-text text-muted">Please specify if you selected "Other", otherwise leave blank.</small>
+                    </div>
+                    <div class="form-group col-md-6 mb-0" style="margin-top: 15px"> <label>Address Other Line 2</label>
+                        {{ form.employee_address_other2  }}
+                        <small class="form-text text-muted">Please specify if you selected "Other", otherwise leave blank.</small>
+                    </div>
+                    
+                </div>
+                </div>  </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Zoom ID</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">This section is *NOT* required</h6>
+                <div class="form-row" style="margin-bottom:15px">
+
+                    <div class="form-group col-md-6 mb-0">
+                        {{ form.employee_zoomid }}
+                    </div>
+
+                </div>
+                </div>  </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Profile Picture</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">This section is *NOT* required.  Please upload a square photo.  If your photo is not square, you can use <a href="https://www.adobe.com/photoshop/online/crop-image.html">Adobe's online cropping tool</a>  After uploading the image on Adobes tool, please select the square option on the right. </h6>
+                <div class="form-row" style="margin-bottom:15px">
+
+                    <div class="form-group col-md-6 mb-0">
+                        {{ form.employee_profile_pic }}
+                    </div>
+                    </div>  
+                {% csrf_token %}
+
+                <button class="btn btn-primary" type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>

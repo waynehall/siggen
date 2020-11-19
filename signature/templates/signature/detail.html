@@ -6,7 +6,7 @@
 
 <div style="padding: 20px; font-family: Arial, sans-serif; color: #646467; display: inline-block;">
 	<div class="left" style="display: inline-block; vertical-align: top;">
-		<span><img src="/images/{{employee.employee_profile_pic}}" style="width: 100%; max-width: 120px; max-height: 120px; margin-bottom: 20px; margin-right: 20px;"/></span>
+		<span>{% if employee.employee_profile_pic %}<img src="/images/{{employee.employee_profile_pic}}" style="width: 100%; max-width: 120px; max-height: 120px; margin-bottom: 20px; margin-right: 20px;"/> {% endif %}</span>
 	</div>
 
 	<div class="right" style="display: inline-block; vertical-align: top;">
@@ -23,7 +23,7 @@
 				<td class="title" style="font-size: 16px;">{{ employee.employee_title }}</td>
 			</tr>
 			<tr>
-				<td class="pronouns" style="font-size: 14px;"><span style="padding-top: 3px; display: block;">{% if employee.employee_pronoun_list == "a"%} They / Them{% endif %} {% if employee.employee_pronoun_list == "b"%} She / Her / Hers {% endif %} {% if employee.employee_pronoun_list == "c"%} He / Him / His{% endif %}</span></td>
+				<td class="pronouns" style="font-size: 14px;"><span style="padding-top: 3px; display: block;">{% if employee.employee_pronoun_list == "a"%} They / Them{% endif %} {% if employee.employee_pronoun_list == "b"%} She / Her / Hers {% endif %} {% if employee.employee_pronoun_list == "c"%} He / Him / His{% endif %} {% if employee.employee_pronoun_list == "d" %} {{ employee.employee_pronoun_other }} {% endif %} </span></td>
 			</tr>
 			<tr>
 				<td class="spacer" height="10"></td>
@@ -33,17 +33,30 @@
 			</tr>
 			<tr>
 				<td class="address-one" style="font-size: 14px;">
-					<span>{{employee.employee_address1}}</span>
+					<span>{% if employee.employee_address == "a" %}9500 NE Cascades Pkwy, {% endif %} 
+						{% if employee.employee_address == "b" %}17014 NE Sandy Blvd., {% endif %} 
+						{% if employee.employee_address == "c" %} 508 S. Boston Ave., {% endif %} 
+						{% if employee.employee_address == "d" %}Portland, Oregon {% endif %} 
+						{% if employee.employee_address == "e" %} Tulsa, Oklahoma {% endif %} 
+						{% if employee.employee_address == "f" %} {{ employee.employee_address_other1 }} {% endif %} 
+					</span>
 				</td>
 			</tr>
 			<tr>
 				<td class="address-two" style="font-size: 14px;">
-					<span>{{employee.employee_address2}}</span>
+					<span>
+						{% if employee.employee_address == "a" %} Portland, OR 97220{% endif %} 
+						{% if employee.employee_address == "b" %} Portland, OR 97230{% endif %} 
+						{% if employee.employee_address == "c" %} Tulsa, OK 74103{% endif %} 
+						{% if employee.employee_address == "f" %} {{employee.employee_address_other2}} {% endif %} 
+
+					</span>
 				</td>
 			</tr>
 			<tr>
 				<td class="spacer" height="10"></td>
 			</tr>
+			{% if employee.employee_zoomid %}
 			<tr>
 				<td class="zoom">
 					<span>
@@ -52,6 +65,7 @@
 					</span>
 				</td>
 			</tr>
+			{% endif %}
 		</table>
 	</div>
 
