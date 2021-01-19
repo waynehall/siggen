@@ -62,7 +62,7 @@
                 <div class="form-row" style="margin-bottom:15px">
 
                     <div class="form-group col-md-8 mb-0"> <label>Pronouns</label>
-                        {{ form.employee_pronoun_list }}
+                        {{ form.employee_pronoun_list(style="list-style:none") }}
 
                     </div>
                     <div class="form-group col-md-8 mb-0">
@@ -85,7 +85,7 @@
 
 
                     <div class="form-group col-md-8 mb-0"><label>Address List<span style="color:red">*</span></label>
-                        {{ form.employee_address }}
+                        {{ form.employee_address(style="list-style:none") }}
                     </div>
                     <div class="form-group col-md-8 mb-0">
                     </div>
