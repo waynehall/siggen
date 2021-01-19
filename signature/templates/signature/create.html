@@ -4,94 +4,111 @@
 </head>
 <div class="jumbotron">
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-10">
-            <img src="https://vetsource.com/wp-content/themes/vetsource-2/assets/images/logo.png"> 
-            <h5 class="card-title">Vetsource Signature Generator</h5>
-            <h6 class="card-subtitle mb-2 text-muted">Please fill in as much information as you are comfortable with as these signatures will be available publicly.</h6>
-            <form action="{% url 'create' %}" method="post" enctype="multipart/form-data">
-                <div class="card">
+    <div class="container">
+        <div class="row ">
+            <div class="col-md-8">
+                <img width=250 src="https://vetsource.com/wp-content/themes/vetsource-2/assets/images/logo.png">
+                <h5 style="padding-top: 15px" class="card-title">Employee Signature Generator</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Fields marked with a red asterisk (<span
+                        style="color:red">*</span>) are required. All other fields are optional.
+                </h6>
+            </div>
+        </div>            <form action="{% url 'create' %}" method="post" enctype="multipart/form-data">
+
+
+                <div class="card ">
+                    <div class="card-body ">
+                        <h5 class="card-title">Name and Title</h5>
+
+                            <div class="form-group col-md-8 mb-0" style=><label>First Name</label><span
+                                    style="color:red">*</span>
+                                {{ form.employee_first_name }}
+                            </div>
+                            <div class="form-group col-md-8 mb-0"> <Label> Last Name<span
+                                        style="color:red">*</span></Label>
+                                {{ form.employee_last_name }}
+                            </div>
+                            <div class="form-group col-md-8 mb-0"> <Label> Title<span style="color:red">*</span></Label>
+                                {{ form.employee_title }}
+                            </div>
+
+                    </div>
+
+                </div>
+
+
+            <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Name and Title</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">This section is required</h6>
-                <div class="form-row" style="margin-bottom:15px">
-                    <div class="form-group cardcol-md-6 mb-0" style=><label>First Name</label>
-                        {{ form.employee_first_name }}
-                    </div>
-                    <div class="form-group col-md-6 mb-0"> <Label> Last Name</Label>
-                        {{ form.employee_last_name }}
-                    </div>
-                    
-                </div>
-                <div class="form-row" style="margin-bottom:15px">
-                    <div class="form-group col-md-6 mb-0"> <Label> Title</Label>
-                        {{ form.employee_title  }}
-                    </div>
+                    <h5 class="card-title">Phone Number</h5>
 
-                </div>
-                </div>  
-                </div>  
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Phone Number</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">This section is required. If you do not have a phone number, please enter the most appropriate customer service or location number</h6>
-                <div class="form-row" style="margin-bottom:15px">
 
-                    <div class="form-group col-md-6 mb-0"><Label>Area Code</Label>
+                    <div class="form-group col-md-8 mb-0"><Label>Area Code</Label>
                         {{ form.employee_area_code }}
                     </div>
-                    <div class="form-group col-md-6 mb-0"><label>Phone Number</label>
+                    <div class="form-group col-md-8 mb-0"><label>Phone Number</label>
                         {{ form.employee_phone_number }} <br>
                         <small>Please enter as ###-#### example 738-4443</small>
                     </div>
                 </div>
-                </div>  </div>  
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Pronouns</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">This section is *NOT* required</h6>
+            </div>
+
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Pronouns</h5>
+                <h6 class="card-subtitle mb-2 text-muted">We encourage everyone to add the pronouns they use to refer to
+                    themselves. This can help trans and gender-nonconforming people feel more at ease, and helps
+                    everyone
+                    avoid making mistakes based on first name alone. </h6>
                 <div class="form-row" style="margin-bottom:15px">
 
-                    <div class="form-group col-md-6 mb-0"> <label>Pronouns</label>
+                    <div class="form-group col-md-8 mb-0"> <label>Pronouns</label>
                         {{ form.employee_pronoun_list }}
 
                     </div>
-                    <div class="form-group col-md-6 mb-0">
+                    <div class="form-group col-md-8 mb-0">
                         {{ form.employee_pronoun_other }}
-                        <small class="form-text text-muted">Please specify if you selected "Other", otherwise leave blank.</small>
+                        <small class="form-text text-muted">Please specify if you selected "Other", otherwise leave
+                            blank.</small>
                     </div>
                 </div>
-                </div>  </div>  
+            </div>
+        </div>
 
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Address</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">This section is *NOT* required</h6>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Address</h5>
+                <h6 class="card-subtitle mb-2 text-muted">You can choose to add the full mailing address or just the
+                    city
+                    and state. </h6>
                 <div class="form-row" style="margin-bottom:15px">
 
 
 
-                    <div class="form-group col-md-6 mb-0"><label>Address List</label>
-                        {{ form.employee_address  }}
+                    <div class="form-group col-md-8 mb-0"><label>Address List<span style="color:red">*</span></label>
+                        {{ form.employee_address }}
                     </div>
-                    <div class="form-group col-md-6 mb-0"> 
+                    <div class="form-group col-md-8 mb-0">
                     </div>
-                    <div class="form-group col-md-6 mb-0"style="margin-top: 15px"> <label>Address Other Line 1</label>
-                        {{ form.employee_address_other1  }}
-                        <small class="form-text text-muted">Please specify if you selected "Other", otherwise leave blank.</small>
+                    <div class="form-group col-md-8 mb-0" style="margin-top: 15px"> <label>Address Other Line 1</label>
+                        {{ form.employee_address_other1 }}
+                        <small class="form-text text-muted">Please specify if you selected "Other", otherwise leave
+                            blank.</small>
                     </div>
-                    <div class="form-group col-md-6 mb-0" style="margin-top: 15px"> <label>Address Other Line 2</label>
-                        {{ form.employee_address_other2  }}
-                        <small class="form-text text-muted">Please specify if you selected "Other", otherwise leave blank.</small>
+                    <div class="form-group col-md-8 mb-0" style="margin-top: 15px"> <label>Address Other Line 2</label>
+                        {{ form.employee_address_other2 }}
+                        <small class="form-text text-muted">Please specify if you selected "Other", otherwise leave
+                            blank.</small>
                     </div>
-                    
+
                 </div>
-                </div>  </div>
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Zoom ID</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">This section is *NOT* required</h6>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Schedule a Meeting</h5>
+                <h6 class="card-subtitle mb-2 text-muted">If you’d like to add a link to schedule a meeting with you,
+                    please
+                    add the full URL here.</h6>
                 <div class="form-row" style="margin-bottom:15px">
 
                     <div class="form-group col-md-6 mb-0">
@@ -99,24 +116,31 @@
                     </div>
 
                 </div>
-                </div>  </div>
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Profile Picture</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">This section is *NOT* required.  Please upload a square photo.  If your photo is not square, you can use <a href="https://www.adobe.com/photoshop/online/crop-image.html">Adobe's online cropping tool</a>  After uploading the image on Adobes tool, please select the square option on the right. </h6>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Profile Picture</h5>
+                <h6 class="card-subtitle mb-2 text-muted"> Please upload a square, professional-looking profile photo.
+                    If
+                    you need to crop an existing photo, use <a
+                        href="https://www.adobe.com/photoshop/online/crop-image.html">this free Adobe tool </a>and
+                    download
+                    the image to your computer after you’ve cropped it to a square.
+                </h6>
                 <div class="form-row" style="margin-bottom:15px">
 
                     <div class="form-group col-md-6 mb-0">
                         {{ form.employee_profile_pic }}
                     </div>
-                    </div>  
+                </div>
                 {% csrf_token %}
 
-                <button class="btn btn-primary" type="submit">Submit</button>
-            </form>
+                <button class="btn btn-primary" type="submit">Create My Signature</button>
+                </form>
+            </div>
         </div>
     </div>
-</div>
 </div>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"

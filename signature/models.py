@@ -4,13 +4,14 @@ from django.template.defaultfilters import slugify
 
 class EmployeeInfo(models.Model):
     PRONOUN_CHOICES = (
-        ('a', "They / Them"),
-        ('b', "She / Her / Hers"),
-        ('c', "He / Him / His"),
+        ('a', "They/Them"),
+        ('b', "She/Her/Hers"),
+        ('c', "He/Him/His"),
         ('d', "Other, please specify"),
+        ('e', "Do not include"),
     )
     ADDRESS_LIST = (
-        ('a', "9500 NE Cascades Pkwy, Portland, OR 97220"),
+        ('a', "9500 NE Cascades Pkwy., Portland, OR 97220"),
         ('b', "17014 NE Sandy Blvd., Portland, OR 97230"),
         ('c', "508 S. Boston Ave., Tulsa, OK 74103"),
         ('d', "Portland, Oregon"),
@@ -23,13 +24,13 @@ class EmployeeInfo(models.Model):
     employee_last_name = models.CharField(max_length=50)
     employee_area_code = models.CharField(max_length=3)
     employee_phone_number = models.CharField(max_length=50)
-    employee_pronoun_list = models.CharField( max_length=1, choices=PRONOUN_CHOICES, blank=True)
+    employee_pronoun_list = models.CharField( max_length=1, choices=PRONOUN_CHOICES, default='e')
     employee_pronoun_other = models.CharField(max_length=50, blank=True)
-    employee_address = models.CharField(max_length=1, choices=ADDRESS_LIST, blank=True )
+    employee_address = models.CharField(max_length=1, choices=ADDRESS_LIST, default='a')
     employee_address_other1 = models.CharField(max_length=100, blank=True)
     employee_address_other2 = models.CharField(max_length=100, blank=True)
 
-    employee_zoomid = models.CharField(max_length=50, blank=True)
+    employee_zoomid = models.CharField(max_length=70, blank=True)
     employee_profile_pic = models.ImageField(null=True, blank=True)
     url = models.SlugField(max_length=500,blank=True)
 
