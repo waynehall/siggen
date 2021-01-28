@@ -2,8 +2,123 @@
 <head>
 	<meta name="viewport" content="width=device-width" />
 </head>
-<body><p> Here is your generated code, please copy  the full block in light grey, or if your email client supports it please copy the live version below</p>
+<body>
+	<h1>Here is your new email signature! </h1>
+	<h3>You have 2 options to add this to your email client:
+		<ul><li>Copy and paste the formatted signature directly into the email signature</li></ul>
+		<li>Copy and paste the code directly into the email signature</li>
+		</h3>
+	<p> <a href="https://docs.google.com/document/d/1qehzdDL51uOslMaNwl79wBOQTN6mwdTj_EGxc6oXMiM/edit?usp=sharing"> I need help figuring out how to do this.</a>
+	</p>
+<p> If you made a mistake, you can hit the back button in your browser to start again.</p>
 
+<h1 style="margin-bottom: 40px;"> <b>Formatted Signature</b> (highlight words and images)</h1>
+
+<div style="padding: 20px; font-family: Arial, sans-serif; color: #646467; display: inline-block;">
+	<div class="left" style="display: inline-block; vertical-align: top;">
+		<span>{% if employee.employee_profile_pic %}<img src="/images/{{employee.employee_profile_pic}}" style="width: 100%; max-width: 120px; max-height: 120px; margin-bottom: 20px; margin-right: 20px;"/> {% endif %}</span>
+	</div>
+
+	<div class="right" style="display: inline-block; vertical-align: top;">
+		<table style="font-family: Arial, sans-serif; color: #646467; line-height: 17px;" cellspacing="0" cellpadding="0">
+			<tr>
+				<td class="name">
+					<h2 style="margin-bottom: 3px; margin-top: 0;">{{ employee.employee_first_name }}<span>&nbsp;</span>{{ employee.employee_last_name }}</h2>
+				</td>
+			</tr>
+			<tr>
+				<td class="spacer" height="5"></td>
+			</tr>
+			<tr>
+				<td class="title" style="font-size: 16px;">{{ employee.employee_title }}</td>
+			</tr>
+			<tr>
+				<td class="pronouns" style="font-size: 14px;"><span style="padding-top: 3px; display: block;">{% if employee.employee_pronoun_list == "a"%} They / Them{% endif %} {% if employee.employee_pronoun_list == "b"%} She / Her / Hers {% endif %} {% if employee.employee_pronoun_list == "c"%} He / Him / His{% endif %} {% if employee.employee_pronoun_list == "d" %} {{ employee.employee_pronoun_other }} {% endif %} </span></td>
+			</tr>
+			<tr>
+				<td class="spacer" height="10"></td>
+			</tr>
+			<tr>
+				<td class="phone" style="font-size: 14px;">({{ employee.employee_area_code }})<span>&nbsp;</span>{{employee.employee_phone_number}}</td>
+			</tr>
+			<tr>
+				<td class="address-one" style="font-size: 14px;">
+					<span>{% if employee.employee_address == "a" %}9500 NE Cascades Pkwy, {% endif %} 
+						{% if employee.employee_address == "b" %}17014 NE Sandy Blvd., {% endif %} 
+						{% if employee.employee_address == "c" %} 508 S. Boston Ave., {% endif %} 
+						{% if employee.employee_address == "d" %}Portland, Oregon {% endif %} 
+						{% if employee.employee_address == "e" %} Tulsa, Oklahoma {% endif %} 
+						{% if employee.employee_address == "f" %} {{ employee.employee_address_other1 }} {% endif %} 
+					</span>
+				</td>
+			</tr>
+			<tr>
+				<td class="address-two" style="font-size: 14px;">
+					<span>
+						{% if employee.employee_address == "a" %} Portland, OR 97220{% endif %} 
+						{% if employee.employee_address == "b" %} Portland, OR 97230{% endif %} 
+						{% if employee.employee_address == "c" %} Tulsa, OK 74103{% endif %} 
+						{% if employee.employee_address == "f" %} {{employee.employee_address_other2}} {% endif %} 
+
+					</span>
+				</td>
+			</tr>
+			<tr>
+				<td class="spacer" height="10"></td>
+			</tr>
+			{% if employee.employee_zoomid %}
+			<tr>
+				<td class="zoom">
+					<span>
+						<img src="http://vetsource.com/images/signature/zoom-icon.jpg" alt="" width="20" style="vertical-align: middle;" />
+						<a style="color: #00A6DF; font-size: 14px; text-decoration: none;" href="{{employee.employee_zoomid}}">Schedule a Meeting</a>
+					</span>
+				</td>
+			</tr>
+			{% endif %}
+		</table>
+	</div>
+
+	<div class="footer" style="width: 100%; border-top: 1px solid #ccc; padding-top: 10px; margin-top: 20px; display: flex; flex-wrap: wrap;">
+		<table style="flex-grow: 1; margin-bottom: 10px;">
+			<tr>
+				<td>
+					<a href="http://vetsource.com"><img src="http://vetsource.com/images/email/vetsource-gradient-smaller.jpg" width="130"/></a>
+				</td>
+			</tr>
+		</table>
+
+		<table cellpadding="0" cellspacing="0" style="margin-top: 1px; margin-left:30px;">
+			<tr>
+				<td class="facebook">
+					<a href="https://www.facebook.com/Vetsource/">
+						<img src="http://vetsource.com/images/signature/vetsource-facebook.jpg" alt="Facebook" width="16" />
+					</a>
+				</td>
+				<td class="spacer" width="15"></td>
+				<td class="instagram">
+					<a href="https://www.instagram.com/official_vetsource/">
+						<img src="http://vetsource.com/images/signature/vetsource-instagram.jpg" alt="Instagram" width="16" />
+					</a>
+				</td>
+				<td class="spacer" width="15"></td>
+				<td class="linkedin">
+					<a href="https://www.linkedin.com/company/vetsource">
+						<img src="http://vetsource.com/images/signature/vetsource-linkedin.jpg" alt="LinkedIn" width="16" />
+					</a>
+				</td>
+				<td class="spacer" width="15"></td>
+				<td class="twitter">
+					<a href="https://twitter.com/vetsource">
+						<img src="http://vetsource.com/images/signature/vetsource-twitter.jpg" alt="Twitter" width="16" />
+					</a>
+				</td>
+			</tr>
+		</table>
+
+	</div>
+</div>
+<h1 style="margin-bottom: 40px;"> <b>Coded Signature</b> (highlight the entire block)</h1>
 	<div style="background-color: rgb(184, 184, 184);">
 		
 &lt;div style="padding: 20px; font-family: Arial, sans-serif; color: #646467; display: inline-block;">
@@ -114,115 +229,7 @@
 	</div>
 
 
-	<p> COPY BELOW THIS LINE WITHOUT COPYING THE LINE<br>
-		-----------------------------------------------------------------------
 
-	</p>
-
-<div style="padding: 20px; font-family: Arial, sans-serif; color: #646467; display: inline-block;">
-	<div class="left" style="display: inline-block; vertical-align: top;">
-		<span>{% if employee.employee_profile_pic %}<img src="/images/{{employee.employee_profile_pic}}" style="width: 100%; max-width: 120px; max-height: 120px; margin-bottom: 20px; margin-right: 20px;"/> {% endif %}</span>
-	</div>
-
-	<div class="right" style="display: inline-block; vertical-align: top;">
-		<table style="font-family: Arial, sans-serif; color: #646467; line-height: 17px;" cellspacing="0" cellpadding="0">
-			<tr>
-				<td class="name">
-					<h2 style="margin-bottom: 3px; margin-top: 0;">{{ employee.employee_first_name }}<span>&nbsp;</span>{{ employee.employee_last_name }}</h2>
-				</td>
-			</tr>
-			<tr>
-				<td class="spacer" height="5"></td>
-			</tr>
-			<tr>
-				<td class="title" style="font-size: 16px;">{{ employee.employee_title }}</td>
-			</tr>
-			<tr>
-				<td class="pronouns" style="font-size: 14px;"><span style="padding-top: 3px; display: block;">{% if employee.employee_pronoun_list == "a"%} They / Them{% endif %} {% if employee.employee_pronoun_list == "b"%} She / Her / Hers {% endif %} {% if employee.employee_pronoun_list == "c"%} He / Him / His{% endif %} {% if employee.employee_pronoun_list == "d" %} {{ employee.employee_pronoun_other }} {% endif %} </span></td>
-			</tr>
-			<tr>
-				<td class="spacer" height="10"></td>
-			</tr>
-			<tr>
-				<td class="phone" style="font-size: 14px;">({{ employee.employee_area_code }})<span>&nbsp;</span>{{employee.employee_phone_number}}</td>
-			</tr>
-			<tr>
-				<td class="address-one" style="font-size: 14px;">
-					<span>{% if employee.employee_address == "a" %}9500 NE Cascades Pkwy, {% endif %} 
-						{% if employee.employee_address == "b" %}17014 NE Sandy Blvd., {% endif %} 
-						{% if employee.employee_address == "c" %} 508 S. Boston Ave., {% endif %} 
-						{% if employee.employee_address == "d" %}Portland, Oregon {% endif %} 
-						{% if employee.employee_address == "e" %} Tulsa, Oklahoma {% endif %} 
-						{% if employee.employee_address == "f" %} {{ employee.employee_address_other1 }} {% endif %} 
-					</span>
-				</td>
-			</tr>
-			<tr>
-				<td class="address-two" style="font-size: 14px;">
-					<span>
-						{% if employee.employee_address == "a" %} Portland, OR 97220{% endif %} 
-						{% if employee.employee_address == "b" %} Portland, OR 97230{% endif %} 
-						{% if employee.employee_address == "c" %} Tulsa, OK 74103{% endif %} 
-						{% if employee.employee_address == "f" %} {{employee.employee_address_other2}} {% endif %} 
-
-					</span>
-				</td>
-			</tr>
-			<tr>
-				<td class="spacer" height="10"></td>
-			</tr>
-			{% if employee.employee_zoomid %}
-			<tr>
-				<td class="zoom">
-					<span>
-						<img src="http://vetsource.com/images/signature/zoom-icon.jpg" alt="" width="20" style="vertical-align: middle;" />
-						<a style="color: #00A6DF; font-size: 14px; text-decoration: none;" href="{{employee.employee_zoomid}}">Schedule a Meeting</a>
-					</span>
-				</td>
-			</tr>
-			{% endif %}
-		</table>
-	</div>
-
-	<div class="footer" style="width: 100%; border-top: 1px solid #ccc; padding-top: 10px; margin-top: 20px; display: flex; flex-wrap: wrap;">
-		<table style="flex-grow: 1; margin-bottom: 10px;">
-			<tr>
-				<td>
-					<a href="http://vetsource.com"><img src="http://vetsource.com/images/email/vetsource-gradient-smaller.jpg" width="130"/></a>
-				</td>
-			</tr>
-		</table>
-
-		<table cellpadding="0" cellspacing="0" style="margin-top: 1px; margin-left:30px;">
-			<tr>
-				<td class="facebook">
-					<a href="https://www.facebook.com/Vetsource/">
-						<img src="http://vetsource.com/images/signature/vetsource-facebook.jpg" alt="Facebook" width="16" />
-					</a>
-				</td>
-				<td class="spacer" width="15"></td>
-				<td class="instagram">
-					<a href="https://www.instagram.com/official_vetsource/">
-						<img src="http://vetsource.com/images/signature/vetsource-instagram.jpg" alt="Instagram" width="16" />
-					</a>
-				</td>
-				<td class="spacer" width="15"></td>
-				<td class="linkedin">
-					<a href="https://www.linkedin.com/company/vetsource">
-						<img src="http://vetsource.com/images/signature/vetsource-linkedin.jpg" alt="LinkedIn" width="16" />
-					</a>
-				</td>
-				<td class="spacer" width="15"></td>
-				<td class="twitter">
-					<a href="https://twitter.com/vetsource">
-						<img src="http://vetsource.com/images/signature/vetsource-twitter.jpg" alt="Twitter" width="16" />
-					</a>
-				</td>
-			</tr>
-		</table>
-
-	</div>
-</div>
 
 </body>
 </html>
