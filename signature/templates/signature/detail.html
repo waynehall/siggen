@@ -3,16 +3,16 @@
 	<meta name="viewport" content="width=device-width" />
 </head>
 <body>
-	<h1>Here is your new email signature! </h1>
-	<h3>You have 2 options to add this to your email client:
-		<ul><li>Copy and paste the formatted signature directly into the email signature</li></ul>
-		<li>Copy and paste the code directly into the email signature</li>
+	<h1 style='font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";'>Here is your new email signature! </h1>
+	<h3 style='font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";'>You have 2 options to add this to your email client:
+		<ul><li style='font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";'>Copy and paste the formatted signature directly into the email signature</li>
+		<li style='font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";'>Copy and paste the code directly into the email signature</li></ul>
 		</h3>
-	<p> <a href="https://docs.google.com/document/d/1qehzdDL51uOslMaNwl79wBOQTN6mwdTj_EGxc6oXMiM/edit?usp=sharing"> I need help figuring out how to do this.</a>
+	<p style='font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";'> <a href="https://docs.google.com/document/d/1qehzdDL51uOslMaNwl79wBOQTN6mwdTj_EGxc6oXMiM/edit?usp=sharing"> I need help figuring out how to do this.</a>
 	</p>
 <p> If you made a mistake, you can hit the back button in your browser to start again.</p>
 
-<h1 style="margin-bottom: 40px;"> <b>Formatted Signature</b> (highlight words and images)</h1>
+<h1 style="margin-bottom: 40px; font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';"> <b>Formatted Signature</b> (Start highlighted immediately below this text and stop right before the "Stop Highlighting Here" text.</h1>
 
 <div style="padding: 20px; font-family: Arial, sans-serif; color: #646467; display: inline-block;">
 	<div class="left" style="display: inline-block; vertical-align: top;">
@@ -33,7 +33,7 @@
 				<td class="title" style="font-size: 16px;">{{ employee.employee_title }}</td>
 			</tr>
 			<tr>
-				<td class="pronouns" style="font-size: 14px;"><span style="padding-top: 3px; display: block;">{% if employee.employee_pronoun_list == "a"%} They / Them{% endif %} {% if employee.employee_pronoun_list == "b"%} She / Her / Hers {% endif %} {% if employee.employee_pronoun_list == "c"%} He / Him / His{% endif %} {% if employee.employee_pronoun_list == "d" %} {{ employee.employee_pronoun_other }} {% endif %} </span></td>
+				<td class="pronouns" style="font-size: 14px;"><span style="padding-top: 3px; display: block;">{% if employee.employee_pronoun_list == "a"%} They/Them{% endif %} {% if employee.employee_pronoun_list == "b"%} She/Her/Hers {% endif %} {% if employee.employee_pronoun_list == "c"%} He/Him/His{% endif %} {% if employee.employee_pronoun_list == "d" %} {{ employee.employee_pronoun_other }} {% endif %} </span></td>
 			</tr>
 			<tr>
 				<td class="spacer" height="10"></td>
@@ -118,8 +118,11 @@
 
 	</div>
 </div>
-<h1 style="margin-bottom: 40px;"> <b>Coded Signature</b> (highlight the entire block)</h1>
-	<div style="background-color: rgb(184, 184, 184);">
+
+<h1 style="margin-top: 20px; font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';"> Stop Highlighting Here</h1>
+
+<h1 style='margin-bottom: 50px;font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";'> <b>Coded Signature</b> (highlight the entire block)</h1>
+
 		
 &lt;div style="padding: 20px; font-family: Arial, sans-serif; color: #646467; display: inline-block;">
 &lt;div class="left" style="display: inline-block; vertical-align: top;">
@@ -140,7 +143,7 @@
 			&lt;td class="title" style="font-size: 16px;">{{ employee.employee_title }}&lt;/td>
 		&lt;/tr>
 		&lt;tr>
-			&lt;td class="pronouns" style="font-size: 14px;">&lt;span style="padding-top: 3px; display: block;">{% if employee.employee_pronoun_list == "a"%} They / Them{% endif %} {% if employee.employee_pronoun_list == "b"%} She / Her / Hers {% endif %} {% if employee.employee_pronoun_list == "c"%} He / Him / His{% endif %} {% if employee.employee_pronoun_list == "d" %} {{ employee.employee_pronoun_other }} {% endif %} &lt;/span>&lt;/td>
+			&lt;td class="pronouns" style="font-size: 14px;">&lt;span style="padding-top: 3px; display: block;">{% if employee.employee_pronoun_list == "a"%} They/Them{% endif %} {% if employee.employee_pronoun_list == "b"%} She/Her/Hers {% endif %} {% if employee.employee_pronoun_list == "c"%} He/Him/His{% endif %} {% if employee.employee_pronoun_list == "d" %} {{ employee.employee_pronoun_other }} {% endif %} &lt;/span>&lt;/td>
 		&lt;/tr>
 		&lt;tr>
 			&lt;td class="spacer" height="10">&lt;/td>
@@ -226,7 +229,7 @@
 &lt;/div>
 &lt;/div>
 
-	</div>
+
 
 
 
