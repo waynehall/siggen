@@ -3,19 +3,15 @@
 	<meta name="viewport" content="width=device-width" />
 </head>
 <body>
-	<div style='padding:15px; border: 1px solid rgba(0,0,0,.125);
+	<div style='margin-bottom:75px; padding:15px; border: 1px solid rgba(0,0,0,.125);
 	border-radius: .25rem; background-color: #e9ecef;'>
 	<h1 style='font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";'>Here is your new email signature! </h1>
-	<h3 style='font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";'>You have 2 options to add this to your email client:
-		<ul><li style='font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";'>Copy and paste the formatted signature directly into the email signature</li>
-		<li style='font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";'>Copy and paste the code directly into the email signature. This option is for more advanced users likely using a different email client</li></ul>
-		</h3>
+
 	<p style='font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";'> <a href="https://docs.google.com/document/d/1qehzdDL51uOslMaNwl79wBOQTN6mwdTj_EGxc6oXMiM/edit?usp=sharing"> I need help figuring out how to do this.</a>
 	</p>
 <p> If you made a mistake, you can hit the back button in your browser to start again.</p>
 </div>
-<h1 style=" margin-left: 50px; font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';"> <b>Option 1: Formatted Signature</b> </h1>
-<h3 style=" margin-bottom: 50px; font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';"> Start highlighted immediately below this text and stop right before the "Stop Highlighting Here" text. It may look like you are highlighting blank space, but it helps capture all of the formatting for the signature.</h3>
+
 
 <div style="padding: 20px; font-family: Arial, sans-serif; color: #646467; display: inline-block;">
 	<div class="left" style="display: inline-block; vertical-align: top;">
@@ -46,7 +42,7 @@
 			</tr>
 			<tr>
 				<td class="address-one" style="font-size: 14px;">
-					<span>{% if employee.employee_address == "a" %}9500 NE Cascades Pkwy, {% endif %} 
+					<span>{% if employee.employee_address == "a" %}9500 NE Cascades Pkwy., {% endif %} 
 						{% if employee.employee_address == "b" %}17014 NE Sandy Blvd., {% endif %} 
 						{% if employee.employee_address == "c" %} 508 S. Boston Ave., {% endif %} 
 						{% if employee.employee_address == "d" %}Portland, Oregon {% endif %} 
@@ -122,115 +118,6 @@
 	</div>
 </div>
 
-<h3 style="margin-top: 50px; margin-bottom: 30px; font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';"> Stop Highlighting Here</h3>
-
-<h1 style='margin-left: 50px;margin-bottom: 50px;font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";'> <b>Option 2: Coded Signature</b> (highlight the entire block)</h1>
-
-		
-&lt;div style="padding: 20px; font-family: Arial, sans-serif; color: #646467; display: inline-block;">
-&lt;div class="left" style="display: inline-block; vertical-align: top;">
-	&lt;span>{% if employee.employee_profile_pic %}&lt;img src="/images/{{employee.employee_profile_pic}}" style="width: 100%; max-width: 120px; max-height: 120px; margin-bottom: 20px; margin-right: 20px;"/> {% endif %}&lt;/span>
-&lt;/div>
-
-&lt;div class="right" style="display: inline-block; vertical-align: top;">
-	&lt;table style="font-family: Arial, sans-serif; color: #646467; line-height: 17px;" cellspacing="0" cellpadding="0">
-		&lt;tr>
-			&lt;td class="name">
-				&lt;h2 style="margin-bottom: 3px; margin-top: 0;">{{ employee.employee_first_name }}&lt;span>&nbsp;&lt;/span>{{ employee.employee_last_name }}&lt;/h2>
-			&lt;/td>
-		&lt;/tr>
-		&lt;tr>
-			&lt;td class="spacer" height="5">&lt;/td>
-		&lt;/tr>
-		&lt;tr>
-			&lt;td class="title" style="font-size: 16px;">{{ employee.employee_title }}&lt;/td>
-		&lt;/tr>
-		&lt;tr>
-			&lt;td class="pronouns" style="font-size: 14px;">&lt;span style="padding-top: 3px; display: block;">{% if employee.employee_pronoun_list == "a"%} They/Them{% endif %} {% if employee.employee_pronoun_list == "b"%} She/Her/Hers {% endif %} {% if employee.employee_pronoun_list == "c"%} He/Him/His{% endif %} {% if employee.employee_pronoun_list == "d" %} {{ employee.employee_pronoun_other }} {% endif %} &lt;/span>&lt;/td>
-		&lt;/tr>
-		&lt;tr>
-			&lt;td class="spacer" height="10">&lt;/td>
-		&lt;/tr>
-		&lt;tr>
-			&lt;td class="phone" style="font-size: 14px;">({{ employee.employee_area_code }})&lt;span>&nbsp;&lt;/span>{{employee.employee_phone_number}}&lt;/td>
-		&lt;/tr>
-		&lt;tr>
-			&lt;td class="address-one" style="font-size: 14px;">
-				&lt;span>{% if employee.employee_address == "a" %}9500 NE Cascades Pkwy, {% endif %} 
-					{% if employee.employee_address == "b" %}17014 NE Sandy Blvd., {% endif %} 
-					{% if employee.employee_address == "c" %} 508 S. Boston Ave., {% endif %} 
-					{% if employee.employee_address == "d" %}Portland, Oregon {% endif %} 
-					{% if employee.employee_address == "e" %} Tulsa, Oklahoma {% endif %} 
-					{% if employee.employee_address == "f" %} {{ employee.employee_address_other1 }} {% endif %} 
-				&lt;/span>
-			&lt;/td>
-		&lt;/tr>
-		&lt;tr>
-			&lt;td class="address-two" style="font-size: 14px;">
-				&lt;span>
-					{% if employee.employee_address == "a" %} Portland, OR 97220{% endif %} 
-					{% if employee.employee_address == "b" %} Portland, OR 97230{% endif %} 
-					{% if employee.employee_address == "c" %} Tulsa, OK 74103{% endif %} 
-					{% if employee.employee_address == "f" %} {{employee.employee_address_other2}} {% endif %} 
-
-				&lt;/span>
-			&lt;/td>
-		&lt;/tr>
-		&lt;tr>
-			&lt;td class="spacer" height="10">&lt;/td>
-		&lt;/tr>
-		{% if employee.employee_zoomid %}
-		&lt;tr>
-			&lt;td class="zoom">
-				&lt;span>
-					&lt;img src="http://vetsource.com/images/signature/zoom-icon.jpg" alt="" width="20" style="vertical-align: middle;" />
-					&lt;a style="color: #00A6DF; font-size: 14px; text-decoration: none;" href="{{employee.employee_zoomid}}">Schedule a Meeting&lt;/a>
-				&lt;/span>
-			&lt;/td>
-		&lt;/tr>
-		{% endif %}
-	&lt;/table>
-&lt;/div>
-
-&lt;div class="footer" style="width: 100%; border-top: 1px solid #ccc; padding-top: 10px; margin-top: 20px; display: flex; flex-wrap: wrap;">
-	&lt;table style="flex-grow: 1; margin-bottom: 10px;">
-		&lt;tr>
-			&lt;td>
-				&lt;a href="http://vetsource.com">&lt;img src="http://vetsource.com/images/email/vetsource-gradient-smaller.jpg" width="130"/>&lt;/a>
-			&lt;/td>
-		&lt;/tr>
-	&lt;/table>
-
-	&lt;table cellpadding="0" cellspacing="0" style="margin-top: 1px; margin-left:30px;">
-		&lt;tr>
-			&lt;td class="facebook">
-				&lt;a href="https://www.facebook.com/Vetsource/">
-					&lt;img src="http://vetsource.com/images/signature/vetsource-facebook.jpg" alt="Facebook" width="16" />
-				&lt;/a>
-			&lt;/td>
-			&lt;td class="spacer" width="15">&lt;/td>
-			&lt;td class="instagram">
-				&lt;a href="https://www.instagram.com/official_vetsource/">
-					&lt;img src="http://vetsource.com/images/signature/vetsource-instagram.jpg" alt="Instagram" width="16" />
-				&lt;/a>
-			&lt;/td>
-			&lt;td class="spacer" width="15">&lt;/td>
-			&lt;td class="linkedin">
-				&lt;a href="https://www.linkedin.com/company/vetsource">
-					&lt;img src="http://vetsource.com/images/signature/vetsource-linkedin.jpg" alt="LinkedIn" width="16" />
-				&lt;/a>
-			&lt;/td>
-			&lt;td class="spacer" width="15">&lt;/td>
-			&lt;td class="twitter">
-				&lt;a href="https://twitter.com/vetsource">
-					&lt;img src="http://vetsource.com/images/signature/vetsource-twitter.jpg" alt="Twitter" width="16" />
-				&lt;/a>
-			&lt;/td>
-		&lt;/tr>
-	&lt;/table>
-
-&lt;/div>
-&lt;/div>
 
 
 
